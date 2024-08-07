@@ -28,22 +28,3 @@ function getBotResponse(input) {
         return 'I am not sure how to respond to that. You can say "hello" or "add task".';
     }
 }
-
-// To-Do list functionality
-function addTodo() {
-    const todoInput = document.getElementById('todoInput').value;
-    if (todoInput.trim() === '') return;
-
-    const todoList = document.getElementById('todoList');
-    const todoItem = document.createElement('li');
-    todoItem.textContent = todoInput;
-
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    deleteButton.onclick = () => todoList.removeChild(todoItem);
-
-    todoItem.appendChild(deleteButton);
-    todoList.appendChild(todoItem);
-
-    document.getElementById('todoInput').value = '';
-}
